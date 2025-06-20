@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         Input & Textarea Placeholder Enhancer (EN + Length Info)
 // @namespace    https://ivole32.github.io/
-// @version      1.0
+// @version      1.1
 // @description  Adds helpful placeholders (required/optional + min/max length) to input and textarea fields, including aria-required support.
 // @author       Ivole32
+// @downloadURL  https://raw.githubusercontent.com/Ivole32/userscripts/refs/heads/main/better_input_fields.js
+// @updateURL    https://raw.githubusercontent.com/Ivole32/userscripts/refs/heads/main/better_input_fields.js
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
