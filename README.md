@@ -13,4 +13,4 @@
 I used AI to:
 - Write correct parts of the READMe.md
 - Getting a better understanding of JavaScript
-- It helped me with `better_input_fields`
+- It helped me with `better_input_fields.js`
