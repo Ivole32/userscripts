@@ -1,0 +1,26 @@
+# Programs
+
+## Overview
+
+| File                       | Description                                              |
+|----------------------------|-----------------------------------------------------------|
+| [`better_input_fields.js`](https://github.com/Ivole32/userscripts/blob/main/better_input_fields.js)   | Adds helpful placeholders (required/optional + min/max length) to input and textarea fields, including aria-required support. |
+| [`auto_scroll.js`](https://github.com/Ivole32/userscripts/blob/main/auto_scroll.js)| Auto scroll with direction and speed control, draggable and a collapsible UI box that stays in viewport bounds on toggle collapse/expand.|
+| More| Comming soon!!!|
+
+## Explanation and usage scenarios
+### [`better_input_fields.js`](https://github.com/Ivole32/userscripts/blob/main/better_input_fields.js):
+[`better_input_fields.js`](https://github.com/Ivole32/userscripts/blob/main/better_input_fields.js) makes registration forms much easier to use.
+
+As someone who spends a lot of time online, I often run into frustrating forms — especially long registration forms where it’s unclear whether fields are optional or what rules apply to things like passwords. That’s where [`better_input_fields.js`](https://github.com/Ivole32/userscripts/blob/main/better_input_fields.js) comes in.
+
+This script improves the user experience by automatically enhancing input fields with helpful, readable hints. Each text field clearly shows whether it’s optional, what type of input is expected, and any requirements (like password strength or formatting). It’s a simple way to make forms more intuitive and less annoying — for users and developers alike.
+
+### [`auto_scroll.js`](https://github.com/Ivole32/userscripts/blob/main/auto_scroll.js):
+Especially when reading long articles or news pages on a computer, constantly holding and scrolling the mouse becomes tedious.
+
+[`auto_scroll.js`](https://github.com/Ivole32/userscripts/blob/main/auto_scroll.js) solves this problem. It lets you scroll automatically using a floating menu that adapts to the website's design and layout. You can easily control the scroll speed and direction in real time — making it perfect for relaxed reading or passive monitoring.
+
+With its smooth motion, clean UI, and responsive controls, [`auto_scroll.js`](https://github.com/Ivole32/userscripts/blob/main/auto_scroll.js) makes reading long content on a computer easier, more enjoyable, and hands-free.
+
+![Example](https://github.com/ivole32/userscripts/wiki/autoscroll.png)

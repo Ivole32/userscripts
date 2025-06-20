@@ -1,0 +1,13 @@
+## Installation
+
+See on toutorial on [Installation](https://github.com/Ivole32/userscripts/wiki/Installation)
+
+## Programs
+
+| File                       | Description                                              |
+|----------------------------|-----------------------------------------------------------|
+| [`better_input_fields.js`](https://github.com/Ivole32/userscripts/blob/main/better_input_fields.js)   | Adds helpful placeholders (required/optional + min/max length) to input and textarea fields, including aria-required support. |
+| [`auto_scroll.js`](https://github.com/Ivole32/userscripts/blob/main/auto_scroll.js)| Auto scroll with direction and speed control, draggable and a collapsible UI box that stays in viewport bounds on toggle collapse/expand.|
+| More| Comming soon!!!|
+
+Get a better explaination of the use cases here: [Programs](https://github.com/Ivole32/userscripts/wiki/Programs)
