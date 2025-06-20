@@ -1,9 +1,11 @@
 // ==UserScript==
-// @name         Smooth Auto Scroll with Speed Control, Direction, Drag, and Safe Collapse
-// @namespace    https://example.com/
-// @version      1.8
-// @description  Auto scroll with direction and speed control, draggable and safe collapsible UI box that stays in viewport bounds on toggle collapse/expand.
-// @author       
+// @name         Smooth Auto Scroll with Speed Control, Direction, Drag, and Collapse
+// @namespace    https://ivole32.github.io/
+// @version      2.0
+// @description  Auto scroll with direction and speed control, draggable and a collapsible UI box that stays in viewport bounds on toggle collapse/expand.
+// @author       Ivole32
+// @downloadURL  https://raw.githubusercontent.com/Ivole32/userscripts/refs/heads/main/auto_scroll.js
+// @updateURL    https://raw.githubusercontent.com/Ivole32/userscripts/refs/heads/main/auto_scroll.js
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
@@ -34,7 +36,6 @@
         container.style.color = '#000';
         container.style.cursor = 'move';
 
-        // === Dragging ===
         let offsetX = 0, offsetY = 0, isDragging = false;
 
         container.addEventListener('mousedown', (e) => {
@@ -61,7 +62,6 @@
             container.style.cursor = 'move';
         });
 
-        // === Header + Collapse ===
         const header = document.createElement('div');
         header.style.display = 'flex';
         header.style.justifyContent = 'space-between';
@@ -74,7 +74,7 @@
 
         const toggleCollapseBtn = document.createElement('button');
         toggleCollapseBtn.textContent = '⨯';
-        toggleCollapseBtn.title = 'Einklappen';
+        toggleCollapseBtn.title = 'Collapse';
         toggleCollapseBtn.style.border = 'none';
         toggleCollapseBtn.style.background = 'transparent';
         toggleCollapseBtn.style.fontSize = '16px';
@@ -95,7 +95,6 @@
         header.appendChild(toggleCollapseBtn);
         container.appendChild(header);
 
-        // === Content UI ===
         const content = document.createElement('div');
 
         const btnGroup = document.createElement('div');
@@ -159,7 +158,6 @@
         speedSlider.style.width = '100%';
         speedSlider.style.marginBottom = '8px';
 
-        // === Append UI ===
         btnGroup.appendChild(upBtn);
         btnGroup.appendChild(toggleBtn);
         btnGroup.appendChild(downBtn);
@@ -170,7 +168,6 @@
         container.appendChild(content);
         document.body.appendChild(container);
 
-        // === Auto Color + Direction Highlight ===
         function updateColors() {
             const bgColor = window.getComputedStyle(document.body).backgroundColor;
             const rgb = bgColor.match(/\d+/g);
@@ -277,17 +274,14 @@
             const rect = elem.getBoundingClientRect();
             const padding = 10;
 
-            // Stelle sicher, dass top/left überhaupt da sind
             let top = parseInt(elem.style.top, 10);
             let left = parseInt(elem.style.left, 10);
 
             if (isNaN(top) || isNaN(left)) {
-                // Umrechnung von bottom/right in top/left
                 top = window.innerHeight - rect.height - parseInt(elem.style.bottom || '20', 10);
                 left = window.innerWidth - rect.width - parseInt(elem.style.right || '20', 10);
             }
 
-            // Anpassung, falls über Bildschirmrand
             if (rect.right > window.innerWidth - padding) {
                 left -= rect.right - window.innerWidth + padding;
             }
