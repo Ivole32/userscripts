@@ -1,5 +1,7 @@
 # UserScripts
 
+See full wiki here: [Wiki](https://github.com/Ivole32/userscripts/wiki)
+
 ## Files
 
 | File                       | Description                                              |
