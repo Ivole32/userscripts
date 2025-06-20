@@ -4,11 +4,11 @@
 
 To run user scripts, you first need to install a browser extension that supports them. We recommend **Violentmonkey**.
 
-### 1.1 If you are using a browser that supports the Chrome Web Store:
+### 1.1 If you are using a browser that supports the Chrome Web Store
 Install Violentmonkey from the Chrome Web Store:  
 [Violentmonkey Extension](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
 
-### 1.2 If your browser does not support the Chrome Web Store:
+### 1.2 If your browser does not support the Chrome Web Store
 Search online to find out if your browser supports Violentmonkey or another user script manager (like Tampermonkey or Greasemonkey) and how to install it.
 
 ---
@@ -17,10 +17,10 @@ Search online to find out if your browser supports Violentmonkey or another user
 
 Once you have installed a script manager like Violentmonkey, follow these steps:
 
-### 2.1 Visit the GreasyFork website:
+### 2.1 Visit the GreasyFork website
 [https://greasyfork.org](https://greasyfork.org)
 
-### 2.2 Go directly to my script page:
+### 2.2 Go directly to my script page
 Scripts: [Ivole32](https://greasyfork.org/de/users/1486130-ivole32)
 
 ### 2.3 Click the **“Install this script”** button on the script page.
