@@ -1,6 +1,4 @@
-# userscripts
-
-# Better Form Enhancer – Userscripts
+# UserScripts
 
 ## Files
 
