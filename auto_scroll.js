@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Smooth Auto Scroll with Speed Control and Direction Buttons
+// @name         Smooth Auto Scroll with Speed Control, Direction & Draggable UI
 // @namespace    https://example.com/
-// @version      1.6.1
-// @description  Smooth auto scroll with speed control, adaptive UI colors and direction buttons next to start button. Low-speed scrolling supported.
-// @author       YourName
+// @version      1.7.0
+// @description  Smooth auto scroll with speed control, direction control, draggable and collapsible UI. Supports low scroll speeds with pixel accumulation fix.
+// @author       ...
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
@@ -14,9 +14,10 @@
     window.addEventListener('load', () => {
         let scrolling = false;
         let lastTimestamp = null;
-        let scrollSpeed = 100; // Pixel per second
-        let scrollDirection = 1; // 1 = down, -1 = up
+        let scrollSpeed = 100;
+        let scrollDirection = 1;
         let scrollRemainder = 0;
+        let isCollapsed = false;
 
         const container = document.createElement('div');
         container.style.position = 'fixed';
@@ -29,6 +30,69 @@
         container.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
         container.style.userSelect = 'none';
         container.style.minWidth = '220px';
+        container.style.backgroundColor = '#fff';
+        container.style.color = '#000';
+        container.style.cursor = 'move';
+
+        // === Dragging ===
+        let offsetX = 0, offsetY = 0, isDragging = false;
+
+        container.addEventListener('mousedown', (e) => {
+            if (e.target === container || e.target === header) {
+                isDragging = true;
+                offsetX = e.clientX - container.getBoundingClientRect().left;
+                offsetY = e.clientY - container.getBoundingClientRect().top;
+                container.style.cursor = 'grabbing';
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                container.style.top = `${e.clientY - offsetY}px`;
+                container.style.left = `${e.clientX - offsetX}px`;
+                container.style.bottom = '';
+                container.style.right = '';
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'move';
+        });
+
+        // === Collapsible ===
+        const header = document.createElement('div');
+        header.style.display = 'flex';
+        header.style.justifyContent = 'space-between';
+        header.style.alignItems = 'center';
+        header.style.marginBottom = '6px';
+
+        const title = document.createElement('div');
+        title.textContent = 'Auto Scroll';
+        title.style.fontWeight = 'bold';
+
+        const toggleCollapseBtn = document.createElement('button');
+        toggleCollapseBtn.textContent = '⨯';
+        toggleCollapseBtn.title = 'Einklappen';
+        toggleCollapseBtn.style.border = 'none';
+        toggleCollapseBtn.style.background = 'transparent';
+        toggleCollapseBtn.style.fontSize = '16px';
+        toggleCollapseBtn.style.cursor = 'pointer';
+        toggleCollapseBtn.style.fontWeight = 'bold';
+
+        toggleCollapseBtn.onclick = () => {
+            isCollapsed = !isCollapsed;
+            content.style.display = isCollapsed ? 'none' : '';
+            toggleCollapseBtn.textContent = isCollapsed ? '☰' : '⨯';
+        };
+
+        header.appendChild(title);
+        header.appendChild(toggleCollapseBtn);
+        container.appendChild(header);
+
+        // === Controls ===
+        const content = document.createElement('div');
 
         const btnGroup = document.createElement('div');
         btnGroup.style.display = 'flex';
@@ -80,7 +144,6 @@
         const speedValue = document.createElement('span');
         speedValue.textContent = scrollSpeed;
         speedValue.style.fontWeight = '600';
-
         speedLabel.appendChild(speedValue);
 
         const speedSlider = document.createElement('input');
@@ -92,20 +155,21 @@
         speedSlider.style.width = '100%';
         speedSlider.style.marginBottom = '8px';
 
-        // Button-Gruppe hinzufügen
+        // === Append Buttons and Controls ===
         btnGroup.appendChild(upBtn);
         btnGroup.appendChild(toggleBtn);
         btnGroup.appendChild(downBtn);
-        container.appendChild(btnGroup);
-        container.appendChild(speedLabel);
-        container.appendChild(speedSlider);
+
+        content.appendChild(btnGroup);
+        content.appendChild(speedLabel);
+        content.appendChild(speedSlider);
+        container.appendChild(content);
         document.body.appendChild(container);
 
         function updateColors() {
             const bgColor = window.getComputedStyle(document.body).backgroundColor;
             const rgb = bgColor.match(/\d+/g);
             const brightness = rgb ? (parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) / 1000 : 255;
-
             const theme = brightness > 180 ? 'light' : 'dark';
 
             if (theme === 'light') {
