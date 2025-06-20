@@ -6,7 +6,7 @@
 
 | Datei                       | Beschreibung                                              |
 |----------------------------|-----------------------------------------------------------|
-| `better_input_fields.js`   | Adds helpful placeholders (required/optional + min/max length) to input and textarea fields, including aria-required support. |
+| [`better_input_fields.js`](https://github.com/Ivole32/userscripts/blob/main/better_input_fields.js)   | Adds helpful placeholders (required/optional + min/max length) to input and textarea fields, including aria-required support. |
 | More| Comming soon!!!|
 
 ## AI disclaimer
