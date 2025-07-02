@@ -12,6 +12,6 @@ See full wiki here: [Wiki](https://github.com/Ivole32/userscripts/wiki)
 
 ## AI disclaimer
 I used AI to:
-- Write correct parts of the READMe.md
+- Write correct parts of the READMe.md/Wiki
 - Getting a better understanding of JavaScript
 - It helped me with `better_input_fields.js`; `auto_scroll.js`
