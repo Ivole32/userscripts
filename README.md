@@ -10,6 +10,13 @@ See full wiki here: [Wiki](https://github.com/Ivole32/userscripts/wiki)
 | [`auto_scroll.js`](https://github.com/Ivole32/userscripts/blob/main/auto_scroll.js)| Auto scroll with direction and speed control, draggable and a collapsible UI box that stays in viewport bounds on toggle collapse/expand.| [`Autoscroll`](https://greasyfork.org/de/scripts/540143-smooth-auto-scroll-with-speed-control-direction-drag-and-collapse) |
 | More| Comming soon!!!|
 
+## Roadmap
+- [x] Autoscroller
+- [x] Better input fields
+- [ ] Idk
+- [ ] Idk
+- [ ] Idk
+
 ## AI disclaimer
 I used AI to:
 - Write correct parts of the READMe.md/Wiki
